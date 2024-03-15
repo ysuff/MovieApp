@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MovieApp</string>
+    <string name="watclist">Watchlist Fragment</string>
+
+</resources>
