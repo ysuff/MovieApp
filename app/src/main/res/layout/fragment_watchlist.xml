@@ -4,77 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WatchlistFragment" >
+    android:background="@color/white"
+    android:padding="20dp"
+    tools:context=".WatchlistFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+
+    <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-       android:hint="E-mail"
-        app:startIconDrawable="@drawable/ic_mail"
-        app:endIconMode="clear_text"
-
-        app:errorEnabled="true"
-        app:helperText="Counter"
-        app:helperTextTextColor="@color/red"
-        app:errorIconDrawable="@drawable/ic_eror"
+        android:queryHint="Enter Movie/Series or Actor"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/searc_back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
-            android:id="@+id/textInputEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="20"
-
-            />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            app:endIconMode="password_toggle"
-            app:counterMaxLength="32"
-            android:maxLength="32"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <Button
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:id="@+id/elevatedButton"
-        android:layout_width="wrap_content"
-        android:background="@color/darkblue"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="216dp"
-        android:text="Elevation Button"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:icon="@drawable/ic_mail"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
