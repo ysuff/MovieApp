@@ -9,7 +9,12 @@
     <color name="end">#6fabab</color>
     <color name="start">#f2efc4</color>
     <color name="red">#FF0000</color>
-
-
-
+    <color name="colorPrimary">#141A31</color>
+    <color name="colorPrimaryDark">#081029</color>
+    <color name="colorTextIcons">#FFFFFF</color>
+    <color name="colorPrimaryLight">#1E27746</color>
+    <color name="colorTextPrimary">#CBD5ED</color>
+    <color name="colorTextSecondary">#4A5B82</color>
+    <color name="colorTextOther">#5AD303</color>
+    <color name="colorThemeExtra">#FF5252</color>
 </resources>
