@@ -60,7 +60,8 @@ class LoginFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            val login = LoginFragmentDirections.actionLoginFragmentToSerchScreenFragment()
+            val login =
+                com.yusuf.movieapp.LoginFragmentDirections.actionLoginFragmentToSerchScreenFragment()
             Navigation.findNavController(it).navigate(login)
         }
     }

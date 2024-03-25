@@ -43,13 +43,13 @@
             android:id="@+id/loginMailLayoutText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:hint="Email"
             app:endIconMode="clear_text"
             app:startIconDrawable="@drawable/ic_mail">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/loginMailEditText"
-
                 android:layout_width="match_parent"
                 android:inputType="textEmailAddress"
                 android:layout_height="wrap_content"

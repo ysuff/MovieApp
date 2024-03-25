@@ -5,21 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.doOnTextChanged
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import androidx.lifecycle.ViewModelProvider
 import com.yusuf.movieapp.databinding.FragmentWatchlistBinding
+import com.yusuf.movieapp.databinding.FragmentYourBinding
 
 
-class WatchlistFragment : Fragment() {
-    private lateinit var binding: FragmentWatchlistBinding
+class YourFragment : Fragment() {
+  private lateinit var binding: FragmentYourBinding
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentWatchlistBinding.inflate(inflater, container, false)
+        binding=FragmentYourBinding.inflate(inflater,container,false)
         return binding.root
 
-
     }
+
 }
+
+
+
