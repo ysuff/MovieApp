@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background">
+    android:background="@drawable/login_background"
+    tools:context=".view.SingUpFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/singupGoBackToLoginButton"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_arrow_back"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+    </com.google.android.material.button.MaterialButton>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
         android:layout_marginVertical="10dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -18,98 +38,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/loginImg"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/cuki" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/loginText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="The Movie Manager"
+            android:text="Sing Up"
+            android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="italic" />
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/loginMailLayoutText"
+            android:id="@+id/singupEmailLayoutText"
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/darkblue"
-            android:hint="Email"
+            android:hint="E-mail"
+            android:textColorHint="@color/white"
             app:endIconMode="clear_text"
             app:startIconDrawable="@drawable/ic_mail">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/loginMailEditText"
+                android:id="@+id/singupEmailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress">
+
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singupPasswordLayoutText"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColorHint="@color/white"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/ic_lock">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singupPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColorHint="@color/white">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/loginPswdLayoutText"
+            android:id="@+id/singupPasswordControlLayoutText"
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="Verify Password"
+            android:textColorHint="@color/white"
             app:endIconMode="password_toggle"
             app:startIconDrawable="@drawable/ic_lock">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/loginPswdEditText"
+                android:id="@+id/singupPasswordControlEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword">
+                android:inputType="textPassword"
+                android:textColorHint="@color/white">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/loginLoginButton"
+            android:id="@+id/singupSingupButton"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:backgroundTint="@color/darkblue"
-            android:elevation="1dp"
-            android:text="Login"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textStyle="italic" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/loginOrText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:text="OR"
-            android:textSize="20sp"
-            android:textStyle="italic" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/loginSingUpButton"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:backgroundTint="@color/darkblue"
+            android:backgroundTint="@color/white"
             android:elevation="1dp"
             android:text="Sing Up"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="italic" />
 
 
     </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

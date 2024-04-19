@@ -1,4 +1,4 @@
-package com.yusuf.movieapp
+package com.yusuf.movieapp.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
