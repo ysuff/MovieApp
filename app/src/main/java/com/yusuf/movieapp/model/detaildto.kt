@@ -8,7 +8,7 @@ data class DetailDtoResult(
     @SerializedName("overview") var detailOverView: String = "",
     @SerializedName("backdrop_path") var posterPath: String? = "",
     @SerializedName("release_date") var detailReleaseDate: String = "",
-    @SerializedName("title") var detailTitle: String? = "",
-    @SerializedName("vote_average") var detailVoteAverage: Double? = 0.1
+    @SerializedName("title") var detailTitle: String = "",
+    @SerializedName("vote_average") var detailVoteAverage: Double = 0.1
        )
 

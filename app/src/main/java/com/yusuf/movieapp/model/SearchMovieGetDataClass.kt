@@ -7,7 +7,11 @@ data class SearchMovieDataClass(
     @SerializedName("title") val movieTitle: String = "",
     @SerializedName("popularity") val popularity: Double = 0.1,
     @SerializedName("poster_path") val posterPath: String = "",
-)
+    @SerializedName("vote_average") val voteAverage:Double=0.1,
+    @SerializedName("release_date") var releaseDate: String = "",
+
+
+    )
 
 data class SearchMovieResult(
     @SerializedName("page") val page: Int = 0,

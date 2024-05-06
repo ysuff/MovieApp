@@ -76,7 +76,7 @@ class LoginFragment : Fragment() {
                                     "Başarıyla Giriş Yapıldı",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                loginNavController.navigate(R.id.action_loginFragment_to_serchScreenFragment)
+                                loginNavController.navigate(R.id.action_loginFragment_to_mainActivity2)
                             } else {
                                 Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT)
                                     .show()

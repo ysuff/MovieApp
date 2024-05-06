@@ -7,8 +7,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "movive_table")
 
 data class MovieEntity(
-    @PrimaryKey(autoGenerate = true)
-    val movieIdDb : Int,
-    val movieNameDb:String,
+    @PrimaryKey()
+    val movieIdDb: Int,
+    val movieTitle:String,
+    val moviePhoto:String,
+    val movieReleaseDate: String,
+    val movieStarRate: Double,
 
-)
+
+    )

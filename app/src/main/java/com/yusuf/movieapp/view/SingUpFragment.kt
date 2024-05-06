@@ -29,12 +29,6 @@ private lateinit var singupAuth: FirebaseAuth
 
 class SingUpFragment : Fragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,7 +74,7 @@ class SingUpFragment : Fragment() {
                         OnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(context,"Kayıt Başarıyla Oluşturuldu", Toast.LENGTH_SHORT).show()
-                                singUpNavController.navigate(R.id.action_singUpFragment_to_serchScreenFragment)
+                                singUpNavController.navigate(R.id.action_singUpFragment_to_mainActivity2)
                             } else {
                                 Toast.makeText(
                                     context,it.exception?.message, Toast.LENGTH_SHORT).show()

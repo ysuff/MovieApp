@@ -28,7 +28,6 @@ class SearchScreenFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-
     ): View {
 
         binding = FragmentSearchScreenBinding.inflate(inflater, container, false)
@@ -43,10 +42,13 @@ class SearchScreenFragment : Fragment() {
 
         searchSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
 
+            override fun onQueryTextChange(newText: String): Boolean {
                 searchViewDataset.clear()
                 searchViewAdapter.notifyDataSetChanged()
-                val get = searchMovieGetService.get(query)
+                val get = searchMovieGetService.get(newText)
                 get.enqueue(object : Callback<SearchMovieResult> {
                     override fun onFailure(call: Call<SearchMovieResult>, t: Throwable) {
                     }
@@ -56,47 +58,32 @@ class SearchScreenFragment : Fragment() {
                         searchViewresponse: Response<SearchMovieResult>
                     ) {
                         if (searchViewresponse.isSuccessful) {
-                            if (searchViewresponse.body()?.searchResults?.size != 0) {
+                            if (searchViewresponse.body()?.searchResults?.isNotEmpty() == true) {
                                 searchViewresponse.body()?.searchResults?.forEach { x ->
-                                    run {
-                                        searchViewDataset.add(
-                                            SearchViewCustomAdapterType(
-                                                movieId = x.movieId,
-                                                searchMovieTitle = x.movieTitle,
-                                                searchMovieImageUrl = x.posterPath
-                                            )
-
+                                    searchViewDataset.add(
+                                        SearchViewCustomAdapterType(
+                                            movieId = x.movieId,
+                                            searchMovieTitle = x.movieTitle,
+                                            searchMovieImageUrl = x.posterPath,
+                                            movieStarRate = x.voteAverage.toString()
+                                                .substring(0, 3),
+                                            movieReleaseDate = x.releaseDate.take(4)
                                         )
-
-                                        searchViewAdapter.notifyItemInserted(searchViewDataset.size - 0)
-                                    }
+                                    )
+                                    searchViewAdapter.notifyItemInserted(searchViewDataset.size)
                                 }
-
-                            } else {
-                                searchViewDataset.add(SearchViewCustomAdapterType(searchMovieTitle = "Not Found!!"))
-                                searchViewAdapter.notifyItemInserted(0)
-
-
                             }
-
-
                         }
-                        println(searchViewresponse.body())
                     }
                 })
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
                 return false
             }
         })
 
         return binding.root
-
-
     }
-
-
 }
+
+
+
 

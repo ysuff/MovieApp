@@ -16,9 +16,9 @@ import com.yusuf.movieapp.view.SearchScreenFragmentDirections
 data class SearchViewCustomAdapterType(
     val searchMovieTitle: String = "",
     val searchMovieImageUrl: String? = "",
-    val movieId: Int = 0
-
-
+    val movieId: Int = 0,
+    val movieStarRate: String ="",
+    val movieReleaseDate:String=""
 )
 
 class SearchViewCustomAdapter(private val searchViewDataSet: ArrayList<SearchViewCustomAdapterType>) :
@@ -26,11 +26,16 @@ class SearchViewCustomAdapter(private val searchViewDataSet: ArrayList<SearchVie
     class SearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val searchMovieTextView: TextView
         val searchMovieImageView: ImageView
+        val searchMovieStarRate: TextView
+        val searchMovieReleaseDate: TextView
 
 
         init {
             searchMovieTextView = view.findViewById(R.id.itemText)
             searchMovieImageView = view.findViewById(R.id.itemImageView)
+            searchMovieStarRate = view.findViewById(R.id.searchStarRate)
+            searchMovieReleaseDate = view.findViewById(R.id.searchReleaseDate)
+
         }
     }
 
@@ -47,21 +52,24 @@ class SearchViewCustomAdapter(private val searchViewDataSet: ArrayList<SearchVie
 
 
         searchViewHolder.searchMovieTextView.text = searchViewDataSet[position].searchMovieTitle
+        searchViewHolder.searchMovieStarRate.text= searchViewDataSet[position].movieStarRate
+        searchViewHolder.searchMovieReleaseDate.text=searchViewDataSet[position].movieReleaseDate
         Glide.with(searchViewHolder.searchMovieImageView)
             .load("https://image.tmdb.org/t/p/w500" + searchViewDataSet[position].searchMovieImageUrl)
 
-            .placeholder(com.bumptech.glide.R.drawable.abc_spinner_mtrl_am_alpha)
+            .placeholder(com.bumptech.glide.R.drawable.abc_list_pressed_holo_dark)
             .into(searchViewHolder.searchMovieImageView)
-        println("neden 2 kere giriyon")
 
         searchViewHolder.itemView.setOnClickListener {
             val bundle = Bundle()
             bundle.putInt("movieId", searchViewDataSet[position].movieId)
 
             val searchViewAction =
-                SearchScreenFragmentDirections.actionSerchScreenFragmentToDetailFragment()
+                SearchScreenFragmentDirections.actionSearchScreenFragmentToDetailFragment()
             Navigation.findNavController(it).navigate(searchViewAction.actionId, bundle)
         }
+
+
 
     }
 

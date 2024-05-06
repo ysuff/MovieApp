@@ -3,64 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/serchScreenFragment">
-
+    app:startDestination="@id/searchScreenFragment">
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.yusuf.movieapp.view.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_serchScreenFragment"
-            app:destination="@id/serchScreenFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_singUpFragment"
-            app:destination="@id/singUpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.yusuf.movieapp.view.FavoritesFragment"
-        android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" >
-        <action
-            android:id="@+id/action_favoritesFragment_to_serchScreenFragment"
-            app:destination="@id/serchScreenFragment" />
-        <action
-            android:id="@+id/action_favoritesFragment_to_watchlistFragment"
-            app:destination="@id/watchlistFragment" />
-        <action
-            android:id="@+id/action_favoritesFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/serchScreenFragment"
+        android:id="@+id/searchScreenFragment"
         android:name="com.yusuf.movieapp.view.SearchScreenFragment"
-        android:label="fragment_serch_screen"
+        android:label="fragment_search_screen"
         tools:layout="@layout/fragment_search_screen" >
         <action
-            android:id="@+id/action_serchScreenFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
+            android:id="@+id/action_searchScreenFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+
         <action
-            android:id="@+id/action_serchScreenFragment_to_watchlistFragment"
+            android:id="@+id/action_searchScreenFragment_to_watchlistFragment"
             app:destination="@id/watchlistFragment" />
         <action
-            android:id="@+id/action_serchScreenFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/watchlistFragment"
-        android:name="com.yusuf.movieapp.view.WatchlistFragment"
-        android:label="fragment_watchlist"
-        tools:layout="@layout/fragment_watchlist" >
-        <action
-            android:id="@+id/action_watchlistFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
-        <action
-            android:id="@+id/action_watchlistFragment_to_serchScreenFragment"
-            app:destination="@id/serchScreenFragment" />
-        <action
-            android:id="@+id/action_watchlistFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_searchScreenFragment_to_favoriteFragments"
+            app:destination="@id/favoriteFragments" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -68,19 +26,43 @@
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action
-            android:id="@+id/action_detailFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
+            android:id="@+id/action_detailFragment_to_searchScreenFragment"
+            app:destination="@id/searchScreenFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_watchlistFragment"
+            app:destination="@id/watchlistFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_favoriteFragments"
+            app:destination="@id/favoriteFragments" />
     </fragment>
     <fragment
-        android:id="@+id/singUpFragment"
-        android:name="com.yusuf.movieapp.view.SingUpFragment"
-        android:label="fragment_sing_up"
-        tools:layout="@layout/fragment_sing_up" >
+        android:id="@+id/watchlistFragment"
+        android:name="com.yusuf.movieapp.view.WatchlistFragment"
+        android:label="fragment_watchlist"
+        tools:layout="@layout/fragment_watchlist" >
         <action
-            android:id="@+id/action_singUpFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_watchlistFragment_to_searchScreenFragment"
+            app:destination="@id/searchScreenFragment" />
         <action
-            android:id="@+id/action_singUpFragment_to_serchScreenFragment"
-            app:destination="@id/serchScreenFragment" />
+            android:id="@+id/action_watchlistFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_watchlistFragment_to_favoriteFragments"
+            app:destination="@id/favoriteFragments" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragments"
+        android:name="com.yusuf.movieapp.view.FavoriteFragments"
+        android:label="fragment_favorite_fragments"
+        tools:layout="@layout/fragment_favorite_fragments" >
+        <action
+            android:id="@+id/action_favoriteFragments_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_favoriteFragments_to_watchlistFragment"
+            app:destination="@id/watchlistFragment" />
+        <action
+            android:id="@+id/action_favoriteFragments_to_searchScreenFragment"
+            app:destination="@id/searchScreenFragment" />
     </fragment>
 </navigation>
